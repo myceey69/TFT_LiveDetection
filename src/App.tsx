@@ -4,13 +4,14 @@ import RecommendationsDisplay from './components/RecommendationsDisplay'
 import CameraScanner from './components/CameraScanner'
 import ItemBuilder from './components/ItemBuilder'
 import TraitSynergyCalculator from './components/TraitSynergyCalculator'
+import BoardPositionAdvisor from './components/BoardPositionAdvisor'
 import { Champion } from './utils/StrategyEngine'
 import { getBestFitComp } from './utils/StrategyEngine'
 import { generateRecommendations } from './utils/RecommendationEngine'
 import imageProcessor from './utils/ImageProcessor'
 
 function App() {
-  const [mode, setMode] = useState<'manual' | 'camera' | 'items' | 'synergy'>('manual')
+  const [mode, setMode] = useState<'manual' | 'camera' | 'items' | 'synergy' | 'positioning'>('manual')
   const [currentBoard, setCurrentBoard] = useState<Champion[]>([])
   const [currentLevel, setCurrentLevel] = useState(7) // Can be updated from OCR
   const [currentGold, setCurrentGold] = useState(30) // Can be updated from OCR
@@ -155,6 +156,16 @@ function App() {
               >
                 ✨ Synergy
               </button>
+              <button
+                onClick={() => setMode('positioning')}
+                className={`px-4 py-2 rounded-md font-medium transition-all whitespace-nowrap ${
+                  mode === 'positioning'
+                    ? 'bg-purple-600 text-white shadow-lg'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                🏁 Position
+              </button>
             </div>
           </div>
 
@@ -191,10 +202,20 @@ function App() {
               <h2 className="text-2xl font-semibold mb-4 text-white">Trait Synergies</h2>
               <TraitSynergyCalculator currentBoard={currentBoard} onTraitClick={handleTraitClick} />
             </div>
+          ) : mode === 'positioning' ? (
+            <div className="bg-slate-800 rounded-xl shadow-2xl p-6">
+              <h2 className="text-2xl font-semibold mb-4 text-white">Board Positioning</h2>
+              <BoardPositionAdvisor 
+                currentBoard={currentBoard}
+                onPositionChange={(positions) => {
+                  console.log('Board positions updated:', positions);
+                }}
+              />
+            </div>
           ) : null}
 
           {/* Feature Info */}
-          <div className="grid md:grid-cols-4 gap-4 mt-8">
+          <div className="grid md:grid-cols-5 gap-4 mt-8">
             <div className="bg-slate-800 rounded-lg p-4 text-center">
               <div className="text-3xl mb-2">🎯</div>
               <h3 className="text-white font-semibold mb-1">Manual Mode</h3>
@@ -218,9 +239,16 @@ function App() {
             </div>
             <div className="bg-slate-800 rounded-lg p-4 text-center">
               <div className="text-3xl mb-2">✨</div>
-              <h3 className="text-white font-semibold mb-1">Trait Synergies</h3>
+              <h3 className="text-white font-semibold mb-1">Synergy</h3>
               <p className="text-gray-400 text-sm">
-                Real-time trait calculator with upgrade suggestions
+                Real-time trait bonus calculation and tracking
+              </p>
+            </div>
+            <div className="bg-slate-800 rounded-lg p-4 text-center">
+              <div className="text-3xl mb-2">🏁</div>
+              <h3 className="text-white font-semibold mb-1">Positioning</h3>
+              <p className="text-gray-400 text-sm">
+                Strategic board layout with hexagonal grid
               </p>
             </div>
           </div>
