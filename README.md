@@ -26,6 +26,28 @@
 - **Item Recommendations**: Build optimal items for your carries
 - **Economic Advice**: Level and gold management tips
 
+## 🛠️ Technology Stack
+
+### Frontend
+- **React 19** with TypeScript for modern UI
+- **Vite** for fast development and optimized builds
+- **Tailwind CSS** for mobile-first responsive design
+
+### Computer Vision & OCR
+- **Tesseract.js** for text recognition (champion names, gold, level)
+- **HTML5 Canvas** for image processing and analysis
+- **react-webcam** for camera integration
+
+### Data & Strategy
+- **JSON databases** for champions, items, and meta compositions
+- **Custom similarity algorithms** for comp matching
+- **Heuristic recommendation engine** for strategic advice
+
+### Deployment
+- **GitHub Pages** compatible static build
+- **Client-side processing** for privacy and zero server costs
+- **PWA ready** for mobile installation
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -109,7 +131,7 @@ The app is configured to work with GitHub Pages:
    → Recommendation: "Find 2-star Yasuo"
    ```
 
-### Camera Mode
+### Camera Mode ✅ FULLY FUNCTIONAL
 
 1. **Grant Camera Permission**:
    - Allow browser access to your camera
@@ -118,12 +140,26 @@ The app is configured to work with GitHub Pages:
 2. **Capture Your Game**:
    - Position phone over your TFT screen
    - Ensure good lighting (avoid glare)
-   - Tap "Capture & Analyze"
+   - Capture during shop phase for best results
 
-3. **Tips for Best Results**:
+3. **Automatic Analysis**:
+   - OCR detects champion names, gold, and level
+   - Visual detection identifies champion positions
+   - Board state updates automatically
+   - Get instant strategic recommendations
+
+4. **Tips for Best Results**:
    - Hold phone steady and parallel to screen
-   - Capture during shop phase
-   - Avoid screen reflections
+   - Good lighting is crucial - avoid reflections
+   - Text should be clearly visible
+   - Processing takes 2-5 seconds per capture
+
+**Example Camera Workflow**:
+```
+Point camera at TFT board → Tap "Capture & Analyze" 
+→ Wait 3 seconds → Champions auto-detected
+→ Board updates → Get recommendations
+```
 
 ## 📱 Mobile Optimization
 
@@ -133,9 +169,10 @@ The app is configured to work with GitHub Pages:
 - Optimized for 320px+ screens
 
 ### Performance
-- Client-side processing (no server needed)
-- Lazy-loaded components
-- Optimized bundle size (~51KB gzipped)
+- Client-side OCR with Tesseract.js
+- Visual champion detection
+- Optimized bundle size (~79KB gzipped)
+- Local processing for privacy
 
 ### PWA Ready
 Future enhancement: Add to home screen capability
@@ -170,29 +207,41 @@ Future enhancement: Add to home screen capability
 - Best use cases
 - Type classifications
 
+## ✨ Current Features
+
+### ✅ Implemented
+- **Manual board building** with champion selection
+- **Real-time strategy recommendations** with similarity scoring
+- **Camera integration** with live image capture
+- **OCR text recognition** with Tesseract.js
+- **Champion name detection** from screenshots
+- **Gold and level detection** from game UI
+- **Visual champion detection** using color analysis
+- **Automatic board state updates** from camera
+- **Mobile-responsive design** optimized for phones
+- **GitHub Pages deployment** ready
+
 ## 🔮 Future Enhancements
 
-### Phase 1: OCR Integration
-- [ ] Tesseract.js for text detection
-- [ ] Champion name recognition
-- [ ] Gold/Level detection
-
-### Phase 2: Computer Vision
-- [ ] Health bar color detection
-- [ ] Unit positioning analysis
-- [ ] Item detection on champions
+### Phase 2B: Enhanced Computer Vision
+- [ ] More accurate champion icon recognition
+- [ ] Item detection on champions and bench
+- [ ] Star level detection from visual cues
+- [ ] Board positioning analysis
 
 ### Phase 3: Advanced Features
-- [ ] Manual correction mode
-- [ ] Multiple comp comparisons
-- [ ] Game state history
-- [ ] Export recommendations
+- [ ] Manual correction mode for misdetected champions
+- [ ] Multiple comp comparisons side-by-side
+- [ ] Game state history tracking
+- [ ] Export recommendations to external tools
+- [ ] PWA installation for offline use
 
 ## 🐛 Known Issues
 
-- Camera mode requires HTTPS in production
-- OCR not yet implemented (camera is visual only)
-- Meta comps are example data (not current TFT set)
+- Camera requires HTTPS in production (GitHub Pages provides this)
+- OCR accuracy depends on lighting and screen clarity
+- Meta comps are example data (update for current TFT set)
+- Visual detection works best during shop phase
 
 ## 📝 Customizing Meta Comps
 
