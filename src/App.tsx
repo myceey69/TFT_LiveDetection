@@ -1,7 +1,30 @@
 import { useState } from 'react'
+import ManualBoardBuilder from './components/ManualBoardBuilder'
+import RecommendationsDisplay from './components/RecommendationsDisplay'
+import CameraScanner from './components/CameraScanner'
+import { Champion } from './utils/StrategyEngine'
+import { getBestFitComp } from './utils/StrategyEngine'
+import { generateRecommendations } from './utils/RecommendationEngine'
 
 function App() {
   const [mode, setMode] = useState<'manual' | 'camera'>('manual')
+  const [currentBoard, setCurrentBoard] = useState<Champion[]>([])
+  const [currentLevel] = useState(7) // Default level
+  const [currentGold] = useState(30) // Default gold
+
+  // Calculate best comp and recommendations when board changes
+  const bestComp = getBestFitComp(currentBoard)
+  const recommendations = generateRecommendations(bestComp, currentLevel, currentGold)
+
+  const handleBoardChange = (board: Champion[]) => {
+    setCurrentBoard(board)
+  }
+
+  const handleCapture = (imageSrc: string) => {
+    console.log('Image captured:', imageSrc)
+    // TODO: Implement OCR and champion detection
+    alert('Image captured! OCR integration coming soon.')
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -15,7 +38,7 @@ function App() {
           </p>
         </header>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Mode Toggle */}
           <div className="flex justify-center mb-8">
             <div className="bg-slate-800 rounded-lg p-1 inline-flex">
@@ -43,29 +66,29 @@ function App() {
           </div>
 
           {/* Content Area */}
-          <div className="bg-slate-800 rounded-xl shadow-2xl p-6">
-            {mode === 'manual' ? (
-              <div className="text-center text-white">
-                <h2 className="text-2xl font-semibold mb-4">Manual Mode</h2>
-                <p className="text-gray-300">
-                  Build your board manually and get strategic recommendations
-                </p>
-                <div className="mt-8 text-purple-400">
-                  🚧 Board builder coming soon...
-                </div>
+          {mode === 'manual' ? (
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Left Column - Board Builder */}
+              <div className="bg-slate-800 rounded-xl shadow-2xl p-6">
+                <h2 className="text-2xl font-semibold mb-4 text-white">Build Your Board</h2>
+                <ManualBoardBuilder onBoardChange={handleBoardChange} />
               </div>
-            ) : (
-              <div className="text-center text-white">
-                <h2 className="text-2xl font-semibold mb-4">Camera Mode</h2>
-                <p className="text-gray-300">
-                  Scan your TFT game with your phone camera
-                </p>
-                <div className="mt-8 text-purple-400">
-                  📷 Camera scanner coming soon...
-                </div>
+
+              {/* Right Column - Recommendations */}
+              <div className="bg-slate-800 rounded-xl shadow-2xl p-6">
+                <h2 className="text-2xl font-semibold mb-4 text-white">Recommendations</h2>
+                <RecommendationsDisplay 
+                  bestComp={bestComp}
+                  recommendations={recommendations}
+                />
               </div>
-            )}
-          </div>
+            </div>
+          ) : (
+            <div className="bg-slate-800 rounded-xl shadow-2xl p-6">
+              <h2 className="text-2xl font-semibold mb-4 text-white">Camera Scanner</h2>
+              <CameraScanner onCapture={handleCapture} />
+            </div>
+          )}
 
           {/* Feature Info */}
           <div className="grid md:grid-cols-3 gap-4 mt-8">
