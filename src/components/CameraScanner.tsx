@@ -3,9 +3,10 @@ import Webcam from 'react-webcam';
 
 interface CameraScannerProps {
   onCapture?: (imageSrc: string) => void;
+  isProcessing?: boolean;
 }
 
-export default function CameraScanner({ onCapture }: CameraScannerProps) {
+export default function CameraScanner({ onCapture, isProcessing = false }: CameraScannerProps) {
   const webcamRef = useRef<Webcam>(null);
   const [facingMode, setFacingMode] = useState<'user' | 'environment'>('environment');
   const [hasPermission, setHasPermission] = useState<boolean | null>(null);
@@ -76,14 +77,21 @@ export default function CameraScanner({ onCapture }: CameraScannerProps) {
       <div className="flex gap-3">
         <button
           onClick={capture}
-          disabled={!hasPermission}
-          className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors"
+          disabled={!hasPermission || isProcessing}
+          className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
         >
-          📸 Capture & Analyze
+          {isProcessing ? (
+            <>
+              <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></div>
+              Analyzing...
+            </>
+          ) : (
+            <>📸 Capture & Analyze</>
+          )}
         </button>
         <button
           onClick={switchCamera}
-          disabled={!hasPermission}
+          disabled={!hasPermission || isProcessing}
           className="bg-slate-700 hover:bg-slate-600 disabled:bg-gray-700 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg transition-colors"
           title="Switch Camera"
         >
@@ -103,15 +111,15 @@ export default function CameraScanner({ onCapture }: CameraScannerProps) {
       </div>
 
       {/* Feature Status */}
-      <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+      <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
         <div className="flex items-start gap-3">
-          <div className="text-2xl">⚠️</div>
+          <div className="text-2xl">✅</div>
           <div>
-            <h4 className="text-yellow-400 font-semibold mb-1 text-sm">
-              Camera Mode - Beta Feature
+            <h4 className="text-green-400 font-semibold mb-1 text-sm">
+              Camera Mode - Now Active!
             </h4>
-            <p className="text-yellow-200/80 text-xs">
-              OCR and champion detection are still in development. For best results, use Manual Mode to input your board.
+            <p className="text-green-200/80 text-xs">
+              OCR and champion detection are now enabled. Capture your TFT board to automatically detect champions and game stats.
             </p>
           </div>
         </div>

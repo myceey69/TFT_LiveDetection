@@ -1,16 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ManualBoardBuilder from './components/ManualBoardBuilder'
 import RecommendationsDisplay from './components/RecommendationsDisplay'
 import CameraScanner from './components/CameraScanner'
 import { Champion } from './utils/StrategyEngine'
 import { getBestFitComp } from './utils/StrategyEngine'
 import { generateRecommendations } from './utils/RecommendationEngine'
+import imageProcessor from './utils/ImageProcessor'
 
 function App() {
   const [mode, setMode] = useState<'manual' | 'camera'>('manual')
   const [currentBoard, setCurrentBoard] = useState<Champion[]>([])
-  const [currentLevel] = useState(7) // Default level
-  const [currentGold] = useState(30) // Default gold
+  const [currentLevel, setCurrentLevel] = useState(7) // Can be updated from OCR
+  const [currentGold, setCurrentGold] = useState(30) // Can be updated from OCR
+  const [isProcessingImage, setIsProcessingImage] = useState(false)
 
   // Calculate best comp and recommendations when board changes
   const bestComp = getBestFitComp(currentBoard)
@@ -20,11 +22,58 @@ function App() {
     setCurrentBoard(board)
   }
 
-  const handleCapture = (imageSrc: string) => {
-    console.log('Image captured:', imageSrc)
-    // TODO: Implement OCR and champion detection
-    alert('Image captured! OCR integration coming soon.')
+  const handleCapture = async (imageSrc: string) => {
+    console.log('Image captured, starting analysis...')
+    setIsProcessingImage(true)
+    
+    try {
+      const result = await imageProcessor.processGameImage(imageSrc)
+      
+      // Update board state with detected champions
+      setCurrentBoard(result.champions)
+      
+      // Update level and gold if detected
+      if (result.level !== null) {
+        setCurrentLevel(result.level)
+      }
+      if (result.gold !== null) {
+        setCurrentGold(result.gold)
+      }
+      
+      // Show results to user
+      const championNames = result.champions.map(c => c.name).join(', ')
+      const statsText = [
+        result.level ? `Level: ${result.level}` : '',
+        result.gold !== null ? `Gold: ${result.gold}` : '',
+      ].filter(Boolean).join(' | ')
+      
+      const message = [
+        `🎯 Analysis Complete! (${Math.round(result.confidence * 100)}% confidence)`,
+        `⏱️ Processed in ${result.processingTime}ms`,
+        championNames ? `🏆 Champions: ${championNames}` : '❌ No champions detected',
+        statsText || '📊 Stats: Not detected',
+        '',
+        '💡 Tip: For better results, capture during shop phase with good lighting!'
+      ].join('\n')
+      
+      alert(message)
+      
+    } catch (error) {
+      console.error('Image processing failed:', error)
+      alert(`❌ Analysis failed: ${error instanceof Error ? error.message : 'Unknown error'}\n\nTip: Try again with better lighting or switch to Manual Mode.`)
+    } finally {
+      setIsProcessingImage(false)
+    }
   }
+
+  // Initialize image processor on component mount
+  useEffect(() => {
+    imageProcessor.initialize().catch(console.error)
+    
+    return () => {
+      imageProcessor.cleanup().catch(console.error)
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -36,6 +85,16 @@ function App() {
           <p className="text-purple-300 text-lg">
             Your Live TFT Strategy Companion
           </p>
+          
+          {/* Processing Status */}
+          {isProcessingImage && (
+            <div className="mt-4 bg-blue-500/20 border border-blue-500/50 rounded-lg p-3 inline-block">
+              <div className="flex items-center gap-2 text-blue-300">
+                <div className="animate-spin h-4 w-4 border-2 border-blue-300 border-t-transparent rounded-full"></div>
+                <span className="font-medium">Analyzing image...</span>
+              </div>
+            </div>
+          )}
         </header>
 
         <div className="max-w-6xl mx-auto">
@@ -86,7 +145,7 @@ function App() {
           ) : (
             <div className="bg-slate-800 rounded-xl shadow-2xl p-6">
               <h2 className="text-2xl font-semibold mb-4 text-white">Camera Scanner</h2>
-              <CameraScanner onCapture={handleCapture} />
+              <CameraScanner onCapture={handleCapture} isProcessing={isProcessingImage} />
             </div>
           )}
 
