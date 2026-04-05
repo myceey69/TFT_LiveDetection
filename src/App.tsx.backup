@@ -157,10 +157,15 @@ function App() {
               </button>
             </div>
           </div>
+              >
+                Camera Mode
+              </button>
+            </div>
+          </div>
 
-          {/* Content based on selected mode */}
+          {/* Content Area */}
           {mode === 'manual' ? (
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {/* Left Column - Board Builder */}
               <div className="bg-slate-800 rounded-xl shadow-2xl p-6">
                 <h2 className="text-2xl font-semibold mb-4 text-white">Build Your Board</h2>
@@ -176,51 +181,34 @@ function App() {
                 />
               </div>
             </div>
-          ) : mode === 'camera' ? (
+          ) : (
             <div className="bg-slate-800 rounded-xl shadow-2xl p-6">
               <h2 className="text-2xl font-semibold mb-4 text-white">Camera Scanner</h2>
               <CameraScanner onCapture={handleCapture} isProcessing={isProcessingImage} />
             </div>
-          ) : mode === 'items' ? (
-            <div className="bg-slate-800 rounded-xl shadow-2xl p-6">
-              <h2 className="text-2xl font-semibold mb-4 text-white">Item Builder & Guide</h2>
-              <ItemBuilder onItemSelect={handleItemSelect} selectedItems={selectedItems} />
-            </div>
-          ) : mode === 'synergy' ? (
-            <div className="bg-slate-800 rounded-xl shadow-2xl p-6">
-              <h2 className="text-2xl font-semibold mb-4 text-white">Trait Synergies</h2>
-              <TraitSynergyCalculator currentBoard={currentBoard} onTraitClick={handleTraitClick} />
-            </div>
-          ) : null}
+          )}
 
           {/* Feature Info */}
-          <div className="grid md:grid-cols-4 gap-4 mt-8">
+          <div className="grid md:grid-cols-3 gap-4 mt-8">
             <div className="bg-slate-800 rounded-lg p-4 text-center">
               <div className="text-3xl mb-2">🎯</div>
-              <h3 className="text-white font-semibold mb-1">Manual Mode</h3>
+              <h3 className="text-white font-semibold mb-1">Meta Analysis</h3>
               <p className="text-gray-400 text-sm">
-                Build your board manually with instant recommendations
+                Compare your board to top-tier compositions
               </p>
             </div>
             <div className="bg-slate-800 rounded-lg p-4 text-center">
-              <div className="text-3xl mb-2">📷</div>
-              <h3 className="text-white font-semibold mb-1">Camera OCR</h3>
+              <div className="text-3xl mb-2">💡</div>
+              <h3 className="text-white font-semibold mb-1">Smart Advice</h3>
               <p className="text-gray-400 text-sm">
-                Scan your screen for automatic champion detection
+                Get Top 3 best next moves in real-time
               </p>
             </div>
             <div className="bg-slate-800 rounded-lg p-4 text-center">
-              <div className="text-3xl mb-2">⚔️</div>
-              <h3 className="text-white font-semibold mb-1">Item Builder</h3>
+              <div className="text-3xl mb-2">🔒</div>
+              <h3 className="text-white font-semibold mb-1">100% Private</h3>
               <p className="text-gray-400 text-sm">
-                Interactive item crafting and optimization guide
-              </p>
-            </div>
-            <div className="bg-slate-800 rounded-lg p-4 text-center">
-              <div className="text-3xl mb-2">✨</div>
-              <h3 className="text-white font-semibold mb-1">Trait Synergies</h3>
-              <p className="text-gray-400 text-sm">
-                Real-time trait calculator with upgrade suggestions
+                All processing happens on your device
               </p>
             </div>
           </div>
