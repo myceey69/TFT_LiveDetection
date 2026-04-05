@@ -1,0 +1,246 @@
+{
+  "components": [
+    { "name": "B.F. Sword", "type": "AD", "icon": "⚔️" },
+    { "name": "Recurve Bow", "type": "AS", "icon": "🏹" },
+    { "name": "Chain Vest", "type": "Armor", "icon": "🛡️" },
+    { "name": "Negatron Cloak", "type": "MR", "icon": "🧥" },
+    { "name": "Giant's Belt", "type": "HP", "icon": "❤️" },
+    { "name": "Spatula", "type": "Special", "icon": "🥄" },
+    { "name": "Needlessly Large Rod", "type": "AP", "icon": "🔮" },
+    { "name": "Tear of the Goddess", "type": "Mana", "icon": "💧" },
+    { "name": "Sparring Gloves", "type": "Crit", "icon": "🥊" }
+  ],
+  "items": [
+    {
+      "name": "Infinity Edge",
+      "components": ["B.F. Sword", "Sparring Gloves"],
+      "type": "AD",
+      "description": "Grants bonus critical strike damage",
+      "bestFor": ["AD Carries"]
+    },
+    {
+      "name": "Deathblade",
+      "components": ["B.F. Sword", "B.F. Sword"],
+      "type": "AD",
+      "description": "Grants bonus attack damage",
+      "bestFor": ["AD Carries"]
+    },
+    {
+      "name": "Giant Slayer",
+      "components": ["B.F. Sword", "Recurve Bow"],
+      "type": "AD",
+      "description": "Deal bonus damage to high health enemies",
+      "bestFor": ["AD Carries"]
+    },
+    {
+      "name": "Hextech Gunblade",
+      "components": ["B.F. Sword", "Needlessly Large Rod"],
+      "type": "Hybrid",
+      "description": "Heals when dealing damage",
+      "bestFor": ["Hybrid Carries"]
+    },
+    {
+      "name": "Bloodthirster",
+      "components": ["B.F. Sword", "Negatron Cloak"],
+      "type": "AD",
+      "description": "Grants lifesteal and shield",
+      "bestFor": ["AD Carries", "Bruisers"]
+    },
+    {
+      "name": "Spear of Shojin",
+      "components": ["B.F. Sword", "Tear of the Goddess"],
+      "type": "AD",
+      "description": "Restore mana on auto-attacks",
+      "bestFor": ["AD Casters"]
+    },
+    {
+      "name": "Guardian Angel",
+      "components": ["B.F. Sword", "Chain Vest"],
+      "type": "AD",
+      "description": "Revive after death",
+      "bestFor": ["Carries"]
+    },
+    {
+      "name": "Warmog's Armor",
+      "components": ["Giant's Belt", "Giant's Belt"],
+      "type": "Tank",
+      "description": "Grants bonus health",
+      "bestFor": ["Tanks", "Frontline"]
+    },
+    {
+      "name": "Guinsoo's Rageblade",
+      "components": ["Recurve Bow", "Needlessly Large Rod"],
+      "type": "Hybrid",
+      "description": "Attacks grant stacking attack speed and damage",
+      "bestFor": ["On-Hit Carries"]
+    },
+    {
+      "name": "Runaan's Hurricane",
+      "components": ["Recurve Bow", "Negatron Cloak"],
+      "type": "AS",
+      "description": "Attacks hit additional targets",
+      "bestFor": ["AoE Carries"]
+    },
+    {
+      "name": "Titan's Resolve",
+      "components": ["Recurve Bow", "Chain Vest"],
+      "type": "AS",
+      "description": "Gain stacking attack damage and resistances",
+      "bestFor": ["Bruisers", "Carries"]
+    },
+    {
+      "name": "Rapid Firecannon",
+      "components": ["Recurve Bow", "Recurve Bow"],
+      "type": "AS",
+      "description": "Grants bonus attack range and attack speed",
+      "bestFor": ["Ranged Carries"]
+    },
+    {
+      "name": "Statikk Shiv",
+      "components": ["Recurve Bow", "Tear of the Goddess"],
+      "type": "AS",
+      "description": "Every third attack chains lightning",
+      "bestFor": ["AoE Carries"]
+    },
+    {
+      "name": "Last Whisper",
+      "components": ["Recurve Bow", "Sparring Gloves"],
+      "type": "AS",
+      "description": "Grants armor penetration",
+      "bestFor": ["AD Carries"]
+    },
+    {
+      "name": "Bramble Vest",
+      "components": ["Chain Vest", "Chain Vest"],
+      "type": "Tank",
+      "description": "Reflect damage to attackers",
+      "bestFor": ["Tanks"]
+    },
+    {
+      "name": "Sunfire Cape",
+      "components": ["Chain Vest", "Giant's Belt"],
+      "type": "Tank",
+      "description": "Deal magic damage to nearby enemies",
+      "bestFor": ["Tanks", "Frontline"]
+    },
+    {
+      "name": "Shroud of Stillness",
+      "components": ["Chain Vest", "Sparring Gloves"],
+      "type": "Tank",
+      "description": "Reduce enemy mana at combat start",
+      "bestFor": ["Tanks"]
+    },
+    {
+      "name": "Gargoyle Stoneplate",
+      "components": ["Chain Vest", "Negatron Cloak"],
+      "type": "Tank",
+      "description": "Gain bonus armor and magic resist",
+      "bestFor": ["Tanks"]
+    },
+    {
+      "name": "Rabadon's Deathcap",
+      "components": ["Needlessly Large Rod", "Needlessly Large Rod"],
+      "type": "AP",
+      "description": "Amplifies ability power",
+      "bestFor": ["AP Carries"]
+    },
+    {
+      "name": "Jeweled Gauntlet",
+      "components": ["Needlessly Large Rod", "Sparring Gloves"],
+      "type": "AP",
+      "description": "Abilities can critically strike",
+      "bestFor": ["AP Carries"]
+    },
+    {
+      "name": "Ionic Spark",
+      "components": ["Needlessly Large Rod", "Negatron Cloak"],
+      "type": "AP",
+      "description": "Enemies take damage when casting",
+      "bestFor": ["Tanks", "AP Units"]
+    },
+    {
+      "name": "Morellonomicon",
+      "components": ["Needlessly Large Rod", "Giant's Belt"],
+      "type": "AP",
+      "description": "Burn enemies and reduce healing",
+      "bestFor": ["AP Carries"]
+    },
+    {
+      "name": "Archangel's Staff",
+      "components": ["Needlessly Large Rod", "Tear of the Goddess"],
+      "type": "AP",
+      "description": "Grants ability power per cast",
+      "bestFor": ["AP Carries"]
+    },
+    {
+      "name": "Dragon's Claw",
+      "components": ["Negatron Cloak", "Negatron Cloak"],
+      "type": "Tank",
+      "description": "Grants magic resist and regeneration",
+      "bestFor": ["Tanks"]
+    },
+    {
+      "name": "Quicksilver",
+      "components": ["Negatron Cloak", "Sparring Gloves"],
+      "type": "Utility",
+      "description": "Immune to crowd control",
+      "bestFor": ["Carries"]
+    },
+    {
+      "name": "Chalice of Power",
+      "components": ["Negatron Cloak", "Tear of the Goddess"],
+      "type": "AP",
+      "description": "Grant allies ability power",
+      "bestFor": ["Support", "AP Units"]
+    },
+    {
+      "name": "Redemption",
+      "components": ["Giant's Belt", "Tear of the Goddess"],
+      "type": "Support",
+      "description": "Heal allies after a delay",
+      "bestFor": ["Tanks", "Support"]
+    },
+    {
+      "name": "Blue Buff",
+      "components": ["Tear of the Goddess", "Tear of the Goddess"],
+      "type": "Mana",
+      "description": "Set max mana to 10",
+      "bestFor": ["Mana-hungry Casters"]
+    },
+    {
+      "name": "Hand of Justice",
+      "components": ["Sparring Gloves", "Tear of the Goddess"],
+      "type": "Utility",
+      "description": "Grants damage or healing randomly",
+      "bestFor": ["Carries"]
+    },
+    {
+      "name": "Thief's Gloves",
+      "components": ["Sparring Gloves", "Sparring Gloves"],
+      "type": "Special",
+      "description": "Equip 2 random items each round",
+      "bestFor": ["Flexible Units"]
+    },
+    {
+      "name": "Locket of the Iron Solari",
+      "components": ["Chain Vest", "Needlessly Large Rod"],
+      "type": "Support",
+      "description": "Grant allies a shield",
+      "bestFor": ["Tanks", "Support"]
+    },
+    {
+      "name": "Zeke's Herald",
+      "components": ["B.F. Sword", "Giant's Belt"],
+      "type": "Support",
+      "description": "Grant allies attack speed",
+      "bestFor": ["Support"]
+    },
+    {
+      "name": "Frozen Heart",
+      "components": ["Chain Vest", "Tear of the Goddess"],
+      "type": "Tank",
+      "description": "Reduce enemy attack speed",
+      "bestFor": ["Tanks"]
+    }
+  ]
+}

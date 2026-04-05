@@ -1,0 +1,127 @@
+{
+  "metaComps": [
+    {
+      "id": "spirit-warriors",
+      "name": "Spirit Warriors",
+      "tier": "S",
+      "difficulty": "medium",
+      "units": [
+        { "name": "Kalista", "cost": 1, "stars": 3, "position": "front" },
+        { "name": "Garen", "cost": 1, "stars": 2, "position": "front" },
+        { "name": "Darius", "cost": 2, "stars": 2, "position": "front" },
+        { "name": "Yasuo", "cost": 3, "stars": 2, "position": "mid" },
+        { "name": "Shen", "cost": 4, "stars": 2, "position": "front" },
+        { "name": "Irelia", "cost": 4, "stars": 2, "position": "mid" },
+        { "name": "Kindred", "cost": 5, "stars": 2, "position": "back" }
+      ],
+      "coreItems": [
+        { "unit": "Kalista", "item": "Guinsoo's Rageblade" },
+        { "unit": "Kalista", "item": "Infinity Edge" },
+        { "unit": "Kalista", "item": "Last Whisper" },
+        { "unit": "Shen", "item": "Bramble Vest" },
+        { "unit": "Shen", "item": "Dragon's Claw" }
+      ],
+      "traits": ["Spirit", "Warrior", "Duelist"],
+      "level": 8,
+      "description": "Hyper-carry Kalista composition with Spirit trait for sustain and Warrior trait for damage."
+    },
+    {
+      "id": "reroll-kog",
+      "name": "Reroll Kog'Maw",
+      "tier": "A",
+      "difficulty": "easy",
+      "units": [
+        { "name": "Kog'Maw", "cost": 1, "stars": 3, "position": "back" },
+        { "name": "Malzahar", "cost": 1, "stars": 3, "position": "back" },
+        { "name": "Kassadin", "cost": 1, "stars": 2, "position": "front" },
+        { "name": "Cho'Gath", "cost": 2, "stars": 2, "position": "front" },
+        { "name": "Vel'Koz", "cost": 3, "stars": 2, "position": "back" },
+        { "name": "Bel'Veth", "cost": 4, "stars": 1, "position": "front" }
+      ],
+      "coreItems": [
+        { "unit": "Kog'Maw", "item": "Guinsoo's Rageblade" },
+        { "unit": "Kog'Maw", "item": "Titan's Resolve" },
+        { "unit": "Kog'Maw", "item": "Runaan's Hurricane" },
+        { "unit": "Bel'Veth", "item": "Bloodthirster" }
+      ],
+      "traits": ["Void", "Sorcerer", "Mutant"],
+      "level": 7,
+      "description": "Fast reroll comp focusing on 3-star Kog'Maw carry. Stay at level 7 and roll down for Kog'Maw."
+    },
+    {
+      "id": "ap-carries",
+      "name": "AP Carries",
+      "tier": "S",
+      "difficulty": "hard",
+      "units": [
+        { "name": "Annie", "cost": 2, "stars": 2, "position": "front" },
+        { "name": "Lux", "cost": 3, "stars": 2, "position": "back" },
+        { "name": "Orianna", "cost": 3, "stars": 2, "position": "mid" },
+        { "name": "Syndra", "cost": 4, "stars": 2, "position": "back" },
+        { "name": "Ahri", "cost": 4, "stars": 2, "position": "back" },
+        { "name": "Azir", "cost": 5, "stars": 2, "position": "mid" },
+        { "name": "Morgana", "cost": 5, "stars": 1, "position": "back" }
+      ],
+      "coreItems": [
+        { "unit": "Azir", "item": "Rabadon's Deathcap" },
+        { "unit": "Azir", "item": "Jeweled Gauntlet" },
+        { "unit": "Azir", "item": "Archangel's Staff" },
+        { "unit": "Ahri", "item": "Blue Buff" },
+        { "unit": "Annie", "item": "Morellonomicon" }
+      ],
+      "traits": ["Mage", "Arcanist", "Scholar"],
+      "level": 8,
+      "description": "Flexible AP composition with multiple carry options. Prioritize getting AP items for Azir or Ahri."
+    },
+    {
+      "id": "brawler-bruiser",
+      "name": "Brawler Bruiser",
+      "tier": "A",
+      "difficulty": "easy",
+      "units": [
+        { "name": "Malphite", "cost": 1, "stars": 2, "position": "front" },
+        { "name": "Zac", "cost": 2, "stars": 2, "position": "front" },
+        { "name": "Vi", "cost": 3, "stars": 2, "position": "front" },
+        { "name": "Sejuani", "cost": 4, "stars": 2, "position": "front" },
+        { "name": "Nunu", "cost": 3, "stars": 2, "position": "front" },
+        { "name": "Urgot", "cost": 4, "stars": 2, "position": "back" },
+        { "name": "Sion", "cost": 5, "stars": 1, "position": "front" }
+      ],
+      "coreItems": [
+        { "unit": "Sejuani", "item": "Sunfire Cape" },
+        { "unit": "Urgot", "item": "Infinity Edge" },
+        { "unit": "Urgot", "item": "Last Whisper" },
+        { "unit": "Urgot", "item": "Giant Slayer" },
+        { "unit": "Sion", "item": "Bramble Vest" }
+      ],
+      "traits": ["Brawler", "Bruiser", "Chemtech"],
+      "level": 8,
+      "description": "Tanky frontline with Urgot as backline carry. Easy to play and forgiving composition."
+    },
+    {
+      "id": "draven-carry",
+      "name": "Draven Carry",
+      "tier": "S",
+      "difficulty": "medium",
+      "units": [
+        { "name": "Samira", "cost": 1, "stars": 2, "position": "back" },
+        { "name": "Senna", "cost": 2, "stars": 2, "position": "back" },
+        { "name": "Swain", "cost": 3, "stars": 2, "position": "front" },
+        { "name": "Draven", "cost": 4, "stars": 2, "position": "back" },
+        { "name": "Silco", "cost": 3, "stars": 2, "position": "mid" },
+        { "name": "Jinx", "cost": 4, "stars": 2, "position": "back" },
+        { "name": "Aphelios", "cost": 5, "stars": 1, "position": "back" }
+      ],
+      "coreItems": [
+        { "unit": "Draven", "item": "Infinity Edge" },
+        { "unit": "Draven", "item": "Bloodthirster" },
+        { "unit": "Draven", "item": "Last Whisper" },
+        { "unit": "Swain", "item": "Bramble Vest" },
+        { "unit": "Swain", "item": "Dragon's Claw" }
+      ],
+      "traits": ["Debonair", "Assassin", "Sniper"],
+      "level": 8,
+      "description": "Draven hyper-carry comp. Focus on AD items and getting Draven 2-star early."
+    }
+  ]
+}

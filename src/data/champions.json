@@ -1,0 +1,208 @@
+{
+  "champions": [
+    {
+      "name": "Kalista",
+      "cost": 1,
+      "traits": ["Spirit", "Duelist"],
+      "optimalItems": ["Guinsoo's Rageblade", "Infinity Edge", "Last Whisper", "Runaan's Hurricane"]
+    },
+    {
+      "name": "Garen",
+      "cost": 1,
+      "traits": ["Warrior", "Protector"],
+      "optimalItems": ["Sunfire Cape", "Bramble Vest", "Warmog's Armor"]
+    },
+    {
+      "name": "Malphite",
+      "cost": 1,
+      "traits": ["Brawler", "Bruiser"],
+      "optimalItems": ["Sunfire Cape", "Bramble Vest", "Dragon's Claw"]
+    },
+    {
+      "name": "Kog'Maw",
+      "cost": 1,
+      "traits": ["Void", "Sniper"],
+      "optimalItems": ["Guinsoo's Rageblade", "Titan's Resolve", "Runaan's Hurricane"]
+    },
+    {
+      "name": "Malzahar",
+      "cost": 1,
+      "traits": ["Void", "Sorcerer"],
+      "optimalItems": ["Archangel's Staff", "Rabadon's Deathcap", "Morellonomicon"]
+    },
+    {
+      "name": "Kassadin",
+      "cost": 1,
+      "traits": ["Void", "Scholar"],
+      "optimalItems": ["Bramble Vest", "Dragon's Claw", "Ionic Spark"]
+    },
+    {
+      "name": "Samira",
+      "cost": 1,
+      "traits": ["Debonair", "Sniper"],
+      "optimalItems": ["Infinity Edge", "Last Whisper", "Giant Slayer"]
+    },
+    {
+      "name": "Darius",
+      "cost": 2,
+      "traits": ["Warrior", "Chemtech"],
+      "optimalItems": ["Bloodthirster", "Titan's Resolve", "Hand of Justice"]
+    },
+    {
+      "name": "Annie",
+      "cost": 2,
+      "traits": ["Arcanist", "Scholar"],
+      "optimalItems": ["Morellonomicon", "Archangel's Staff", "Blue Buff"]
+    },
+    {
+      "name": "Zac",
+      "cost": 2,
+      "traits": ["Brawler", "Chemtech"],
+      "optimalItems": ["Sunfire Cape", "Bramble Vest", "Warmog's Armor"]
+    },
+    {
+      "name": "Cho'Gath",
+      "cost": 2,
+      "traits": ["Void", "Brawler"],
+      "optimalItems": ["Bramble Vest", "Dragon's Claw", "Warmog's Armor"]
+    },
+    {
+      "name": "Senna",
+      "cost": 2,
+      "traits": ["Debonair", "Enchanter"],
+      "optimalItems": ["Hand of Justice", "Guinsoo's Rageblade", "Last Whisper"]
+    },
+    {
+      "name": "Yasuo",
+      "cost": 3,
+      "traits": ["Spirit", "Duelist"],
+      "optimalItems": ["Infinity Edge", "Last Whisper", "Quicksilver"]
+    },
+    {
+      "name": "Lux",
+      "cost": 3,
+      "traits": ["Arcanist", "Enchanter"],
+      "optimalItems": ["Rabadon's Deathcap", "Jeweled Gauntlet", "Spear of Shojin"]
+    },
+    {
+      "name": "Orianna",
+      "cost": 3,
+      "traits": ["Arcanist", "Enchanter"],
+      "optimalItems": ["Blue Buff", "Archangel's Staff", "Morellonomicon"]
+    },
+    {
+      "name": "Vi",
+      "cost": 3,
+      "traits": ["Brawler", "Enforcer"],
+      "optimalItems": ["Sunfire Cape", "Titan's Resolve", "Bramble Vest"]
+    },
+    {
+      "name": "Nunu",
+      "cost": 3,
+      "traits": ["Brawler", "Spirit"],
+      "optimalItems": ["Warmog's Armor", "Bramble Vest", "Dragon's Claw"]
+    },
+    {
+      "name": "Vel'Koz",
+      "cost": 3,
+      "traits": ["Void", "Sorcerer"],
+      "optimalItems": ["Rabadon's Deathcap", "Jeweled Gauntlet", "Giant Slayer"]
+    },
+    {
+      "name": "Swain",
+      "cost": 3,
+      "traits": ["Debonair", "Arcanist"],
+      "optimalItems": ["Bramble Vest", "Dragon's Claw", "Ionic Spark"]
+    },
+    {
+      "name": "Silco",
+      "cost": 3,
+      "traits": ["Debonair", "Mastermind"],
+      "optimalItems": ["Blue Buff", "Archangel's Staff", "Morellonomicon"]
+    },
+    {
+      "name": "Shen",
+      "cost": 4,
+      "traits": ["Spirit", "Protector"],
+      "optimalItems": ["Bramble Vest", "Dragon's Claw", "Warmog's Armor"]
+    },
+    {
+      "name": "Irelia",
+      "cost": 4,
+      "traits": ["Spirit", "Assassin"],
+      "optimalItems": ["Infinity Edge", "Last Whisper", "Bloodthirster"]
+    },
+    {
+      "name": "Syndra",
+      "cost": 4,
+      "traits": ["Arcanist", "Scholar"],
+      "optimalItems": ["Rabadon's Deathcap", "Jeweled Gauntlet", "Archangel's Staff"]
+    },
+    {
+      "name": "Ahri",
+      "cost": 4,
+      "traits": ["Arcanist", "Spirit"],
+      "optimalItems": ["Blue Buff", "Rabadon's Deathcap", "Jeweled Gauntlet"]
+    },
+    {
+      "name": "Sejuani",
+      "cost": 4,
+      "traits": ["Brawler", "Enforcer"],
+      "optimalItems": ["Sunfire Cape", "Bramble Vest", "Warmog's Armor"]
+    },
+    {
+      "name": "Urgot",
+      "cost": 4,
+      "traits": ["Chemtech", "Sniper"],
+      "optimalItems": ["Infinity Edge", "Last Whisper", "Giant Slayer"]
+    },
+    {
+      "name": "Bel'Veth",
+      "cost": 4,
+      "traits": ["Void", "Empress"],
+      "optimalItems": ["Bloodthirster", "Titan's Resolve", "Hand of Justice"]
+    },
+    {
+      "name": "Draven",
+      "cost": 4,
+      "traits": ["Debonair", "Enforcer"],
+      "optimalItems": ["Infinity Edge", "Bloodthirster", "Last Whisper"]
+    },
+    {
+      "name": "Jinx",
+      "cost": 4,
+      "traits": ["Debonair", "Sniper"],
+      "optimalItems": ["Infinity Edge", "Last Whisper", "Giant Slayer"]
+    },
+    {
+      "name": "Kindred",
+      "cost": 5,
+      "traits": ["Spirit", "Ranger"],
+      "optimalItems": ["Guinsoo's Rageblade", "Runaan's Hurricane", "Last Whisper"]
+    },
+    {
+      "name": "Azir",
+      "cost": 5,
+      "traits": ["Emperor", "Arcanist"],
+      "optimalItems": ["Rabadon's Deathcap", "Jeweled Gauntlet", "Archangel's Staff"]
+    },
+    {
+      "name": "Morgana",
+      "cost": 5,
+      "traits": ["Arcanist", "Enchanter"],
+      "optimalItems": ["Morellonomicon", "Rabadon's Deathcap", "Ionic Spark"]
+    },
+    {
+      "name": "Sion",
+      "cost": 5,
+      "traits": ["Brawler", "Chemtech"],
+      "optimalItems": ["Bramble Vest", "Warmog's Armor", "Dragon's Claw"]
+    },
+    {
+      "name": "Aphelios",
+      "cost": 5,
+      "traits": ["Debonair", "Sniper"],
+      "optimalItems": ["Infinity Edge", "Last Whisper", "Runaan's Hurricane"]
+    }
+  ]
+}
